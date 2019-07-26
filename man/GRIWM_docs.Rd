@@ -21,9 +21,7 @@ GRIWM(df)
 %%     ~~Describe \code{x} here~~
 A data frame or tibble, which \emph{must} contain the variables `dates` (radiometric dates) and `sd` (their associated errors).
 }
-  \item{iter}{
-The number of replications for resampling; default is 10,000.
-  }
+%%  \item{iter}{The number of replications for resampling; default is 10,000.}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
