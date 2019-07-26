@@ -1,4 +1,4 @@
-devtools::use_package("dplyr")
+devtools::use_package("dplyr", type = "depends")
 
 GRIWM <- function(df, iter){
 
