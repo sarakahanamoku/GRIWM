@@ -1,12 +1,13 @@
-GRIWM <- function(df){
+GRIWM <- function(df, iter){
   require(dplyr)
   
   dates <- df %>% select(dates) %>% as.vector()
   sd <- df %>% select(sd) %>% as.vector()
   k <- length(df$dates) # original returns 1
   
-  iter <- 10000
-  iterdiv <- 10
+  if(is.null(iter)){
+    iter <- 10000
+  }
   
   # initialize vectors
   w_time_mci <- rep(0,iter)
@@ -66,7 +67,7 @@ GRIWM <- function(df){
     }
     
     
-    # if (c %% iterdiv == 0)
+    # if (c %% iterdiv == 0) # this "progress output" slows down the code a lot!
     #   print(c)
   }
   
