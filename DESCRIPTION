@@ -2,15 +2,14 @@ Package: GRIWM
 Type: Package
 Title: Gaussian-Resampled Inverse-Weighted McInerny Approach
 Version: 0.1.0
-Author: N. Spano
-Maintainer: sara.kahanamoku@berkeley.edu
-Imports:
-    dplyr
-Description: 
+Author: person("Nicholas", "Spano", email = "spano@berkeley.edu", role = aut)
+Maintainer: person("Sara", "Kahanamoku", email = "sara.kahanamoku@berkeley.edu", role = cre)
+Description:
     GRIWM etimates extinction time from fossil data. Observations are weighted inversely by their temporal distance from
-the last observation of a species occurrence, such that dates nearer to the last observation have heavier weights. Dates
-*with associated radiometric errors* (i.e., with standard deviations reported) are resampled from an underlying fossilization
-probability distribution, here assumed to be Gaussian.
+    the last observation of a species occurrence, such that dates nearer to the last observation have heavier weights. Dates
+    *with associated radiometric errors* (i.e., with standard deviations reported) are resampled from an underlying fossilization
+    probability distribution, here assumed to be Gaussian.
 License: Creative Commons
 Encoding: UTF-8
 LazyData: true
+Imports: dplyr
