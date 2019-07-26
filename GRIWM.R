@@ -6,6 +6,7 @@ GRIWM <- function(df){
   sd <- df %>% dplyr::select(sd) %>% as.vector()
   k <- length(df$dates) # original returns 1
   iter <- 10000
+  alpha <- 0.05
 
   # initialize vectors
   w_time_mci <- rep(0,iter)
@@ -70,8 +71,6 @@ GRIWM <- function(df){
   }
 
   #Confidence interval setting
-  alpha <- 0.05
-
   lower_ci <- round(quantile(na.omit(w_time_mci), probs = (1 - alpha / 2)), 0)
 
   # Centroid
