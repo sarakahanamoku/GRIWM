@@ -50,7 +50,7 @@ Method first described in \href{https://www.sciencedirect.com/science/article/pi
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-output <- GRIWM(df, 10000)
+output <- GRIWM(df)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
