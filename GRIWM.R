@@ -1,14 +1,11 @@
 devtools::use_package("dplyr", type = "depends")
 
-GRIWM <- function(df, iter){
+GRIWM <- function(df){
 
   dates <- df %>% dplyr::select(dates) %>% as.vector()
   sd <- df %>% dplyr::select(sd) %>% as.vector()
   k <- length(df$dates) # original returns 1
-
-  if(is.null(iter)){
-    iter <- 10000
-  }
+  iter <- 10000
 
   # initialize vectors
   w_time_mci <- rep(0,iter)
