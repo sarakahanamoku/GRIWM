@@ -2,8 +2,8 @@ devtools::use_package("dplyr", type = "depends")
 
 GRIWM <- function(df){
 
-  dates <- df %>% dplyr::select(dates) %>% as.vector()
-  sd <- df %>% dplyr::select(sd) %>% as.vector()
+  dates <- df %>% dplyr::pull(dates)
+  sd <- df %>% dplyr::pull(sd)
   k <- length(df$dates) # original returns 1
   iter <- 10000
   alpha <- 0.05
@@ -16,7 +16,7 @@ GRIWM <- function(df){
     ## resampling of the standard deviation of each date from a Gaussian distribution
     for (ii in 1:k) {
       date_samp[ii] <-
-        round(rnorm(1, mean = as.numeric(dates[ii, ]), sd = as.numeric(sd[ii, ])))
+        round(rnorm(1, mean = as.numeric(dates[ii]), sd = as.numeric(sd[ii])))
     }
     date_samp <- (sort(date_samp))
 
