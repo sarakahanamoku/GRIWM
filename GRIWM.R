@@ -2,8 +2,8 @@ devtools::use_package("dplyr", type = "depends")
 
 GRIWM <- function(df){
 
-  dates <- df %>% dplyr::select(dates) %>% as.vector()
-  sd <- df %>% dplyr::select(sd) %>% as.vector()
+  dates <- df %>% dplyr::pull(dates)
+  sd <- df %>% dplyr::pull(sd)
   k <- length(df$dates) # original returns 1
   iter <- 10000
   alpha <- 0.05
